@@ -1,0 +1,273 @@
+###############################################################################
+#
+# IAR ELF Linker V8.30.2.160/W32 for ARM                  11/Aug/2019  05:13:56
+# Copyright 2007-2018 IAR Systems AB.
+#
+#    Output file  =  
+#        C:\Users\Fang\Documents\ITplus\blink\project\Debug\Exe\STM32_Started.out
+#    Map file     =  
+#        C:\Users\Fang\Documents\ITplus\blink\project\Debug\List\STM32_Started.map
+#    Command line =  
+#        -f C:\Users\Fang\AppData\Local\Temp\EW4493.tmp
+#        (C:\Users\Fang\Documents\ITplus\blink\project\Debug\Obj\LCD.o
+#        C:\Users\Fang\Documents\ITplus\blink\project\Debug\Obj\main.o
+#        C:\Users\Fang\Documents\ITplus\blink\project\Debug\Obj\startup_stm32f10x_md.o
+#        C:\Users\Fang\Documents\ITplus\blink\project\Debug\Obj\system_stm32f10x.o
+#        C:\Users\Fang\Documents\ITplus\blink\project\Debug\Obj\user_delay.o
+#        --no_out_extension -o
+#        C:\Users\Fang\Documents\ITplus\blink\project\Debug\Exe\STM32_Started.out
+#        --map
+#        C:\Users\Fang\Documents\ITplus\blink\project\Debug\List\STM32_Started.map
+#        --config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.1\arm\config\linker\ST\stm32f103x8.icf" --semihosting --entry
+#        __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because no calls to memory allocation
+functions were found in the application outside of system library
+functions, and there are calls to deallocation functions in the
+application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x800'0000 { ro section .intvec };
+"P1":  place in [from 0x800'0000 to 0x800'ffff] { ro };
+define block CSTACK with size = 2K, alignment = 8 { };
+define block HEAP with size = 2K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'4fff] {
+          rw, block CSTACK, block HEAP };
+initialize by copy { rw };
+
+  Section            Kind         Address   Size  Object
+  -------            ----         -------   ----  ------
+"A0":                                       0xec
+  .intvec            ro code   0x800'0000   0xec  startup_stm32f10x_md.o [1]
+                             - 0x800'00ec   0xec
+
+"P1":                                      0x598
+  .text              ro code   0x800'00ec  0x1a4  system_stm32f10x.o [1]
+  .text              ro code   0x800'0290  0x124  LCD.o [1]
+  .text              ro code   0x800'03b4   0xbc  user_delay.o [1]
+  .text              ro code   0x800'0470   0x58  main.o [1]
+  .text              ro code   0x800'04c8   0x2c  copy_init3.o [3]
+  .text              ro code   0x800'04f4   0x28  data_init.o [3]
+  .iar.init_table    const     0x800'051c   0x14  - Linker created -
+  .text              ro code   0x800'0530   0x1e  cmain.o [3]
+  .text              ro code   0x800'054e    0x4  low_level_init.o [2]
+  .text              ro code   0x800'0552    0x4  exit.o [2]
+  .text              ro code   0x800'0558    0xa  cexit.o [3]
+  .text              ro code   0x800'0564   0x14  exit.o [4]
+  Initializer bytes  const     0x800'0578   0x18  <for P2-1>
+  .text              ro code   0x800'0590   0x10  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'05a0    0xc  cstartup_M.o [3]
+  .rodata            const     0x800'05ac    0x8  main.o [1]
+  .text              ro code   0x800'05b4    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'05b8    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'05bc    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'05c0    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'05c4    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'05c8    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'05cc    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'05d0    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'05d4    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'05d8    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'05dc    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'05e0    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'05e4    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'05e8    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'05ec    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'05f0    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'05f4    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'05f8    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'05fc    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'0600    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'0604    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'0608    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'060c    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'0610    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'0614    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'0618    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'061c    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'0620    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'0624    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'0628    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'062c    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'0630    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'0634    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'0638    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'063c    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'0640    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'0644    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'0648    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'064c    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'0650    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'0654    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'0658    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'065c    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'0660    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'0664    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'0668    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'066c    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'0670    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'0674    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'0678    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'067c    0x4  startup_stm32f10x_md.o [1]
+  .text              ro code   0x800'0680    0x4  startup_stm32f10x_md.o [1]
+  .rodata            const     0x800'0684    0x0  copy_init3.o [3]
+                             - 0x800'0684  0x598
+
+"P2", part 1 of 2:                          0x18
+  P2-1                        0x2000'0000   0x18  <Init block>
+    .data            inited   0x2000'0000    0x4  system_stm32f10x.o [1]
+    .data            inited   0x2000'0004   0x10  system_stm32f10x.o [1]
+    .bss             inited   0x2000'0014    0x4  user_delay.o [1]
+                            - 0x2000'0018   0x18
+
+"P2", part 2 of 2:                         0x800
+  CSTACK                      0x2000'0018  0x800  <Block>
+    CSTACK           uninit   0x2000'0018  0x800  <Block tail>
+                            - 0x2000'0818  0x800
+
+Unused ranges:
+
+         From           To    Size
+         ----           --    ----
+   0x800'0684   0x800'ffff  0xf97c
+  0x2000'0818  0x2000'4fff  0x47e8
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Copy (__iar_copy_init3)
+    1 source range, total size 0x18:
+           0x800'0578  0x18
+    1 destination range, total size 0x18:
+          0x2000'0000  0x18
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                  ro code  ro data  rw data
+    ------                  -------  -------  -------
+command line/config:
+    -------------------------------------------------
+    Total:
+
+C:\Users\Fang\Documents\ITplus\blink\project\Debug\Obj: [1]
+    LCD.o                       292
+    main.o                       88        8
+    startup_stm32f10x_md.o      460
+    system_stm32f10x.o          420       20       20
+    user_delay.o                188        4        4
+    -------------------------------------------------
+    Total:                    1 448       32       24
+
+dl7M_tln.a: [2]
+    exit.o                        4
+    low_level_init.o              4
+    -------------------------------------------------
+    Total:                        8
+
+rt7M_tl.a: [3]
+    cexit.o                      10
+    cmain.o                      30
+    copy_init3.o                 44
+    cstartup_M.o                 12
+    data_init.o                  40
+    -------------------------------------------------
+    Total:                      136
+
+shb_l.a: [4]
+    exit.o                       20
+    -------------------------------------------------
+    Total:                       20
+
+    Gaps                          4
+    Linker created                        20    2 048
+-----------------------------------------------------
+    Grand Total:              1 616       52    2 072
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address  Size  Type      Object
+-----                       -------  ----  ----      ------
+.iar.init_table$$Base    0x800'051c         --   Gb  - Linker created -
+.iar.init_table$$Limit   0x800'0530         --   Gb  - Linker created -
+?main                    0x800'0531        Code  Gb  cmain.o [3]
+AHBPrescTable           0x2000'0004  0x10  Data  Gb  system_stm32f10x.o [1]
+CSTACK$$Base            0x2000'0018         --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'0818         --   Gb  - Linker created -
+DelayInit                0x800'0417  0x16  Code  Gb  user_delay.o [1]
+DelayMs                  0x800'0459  0x18  Code  Gb  user_delay.o [1]
+DelayUs                  0x800'042d   0xc  Code  Gb  user_delay.o [1]
+GPIOInit                 0x800'0471  0x1a  Code  Gb  main.o [1]
+LCD_ClrScr               0x800'0329   0xa  Code  Gb  LCD.o [1]
+LCD_Enable               0x800'0291  0x22  Code  Gb  LCD.o [1]
+LCD_Putc                 0x800'02ed  0x26  Code  Gb  LCD.o [1]
+LCD_Puts                 0x800'0313  0x16  Code  Gb  LCD.o [1]
+LCD_SendBit              0x800'02b3  0x1a  Code  Gb  LCD.o [1]
+LCD_SendCmd              0x800'02cd  0x20  Code  Gb  LCD.o [1]
+LCD_init                 0x800'0333  0x7a  Code  Gb  LCD.o [1]
+NVIC_SetPriority         0x800'03b5  0x24  Code  Lc  user_delay.o [1]
+Region$$Table$$Base      0x800'051c         --   Gb  - Linker created -
+Region$$Table$$Limit     0x800'0530         --   Gb  - Linker created -
+SetSysClock              0x800'01af   0x8  Code  Lc  system_stm32f10x.o [1]
+SetSysClockTo72          0x800'01b7  0xae  Code  Lc  system_stm32f10x.o [1]
+SysTick_Config           0x800'03d9  0x2e  Code  Lc  user_delay.o [1]
+SysTick_Handler          0x800'0407  0x10  Code  Gb  user_delay.o [1]
+SystemCoreClock         0x2000'0000   0x4  Data  Gb  system_stm32f10x.o [1]
+SystemCoreClockUpdate    0x800'0131  0x7e  Code  Gb  system_stm32f10x.o [1]
+SystemInit               0x800'00ed  0x44  Code  Gb  system_stm32f10x.o [1]
+__cmain                  0x800'0531        Code  Gb  cmain.o [3]
+__exit                   0x800'0565  0x14  Code  Gb  exit.o [4]
+__iar_copy_init3         0x800'04c9  0x2c  Code  Gb  copy_init3.o [3]
+__iar_data_init3         0x800'04f5  0x28  Code  Gb  data_init.o [3]
+__iar_program_start      0x800'05a1        Code  Gb  cstartup_M.o [3]
+__low_level_init         0x800'054f   0x4  Code  Gb  low_level_init.o [2]
+__vector_table           0x800'0000        Data  Gb  startup_stm32f10x_md.o [1]
+_call_main               0x800'053d        Code  Gb  cmain.o [3]
+_exit                    0x800'0559        Code  Gb  cexit.o [3]
+_main                    0x800'054b        Code  Gb  cmain.o [3]
+exit                     0x800'0553   0x4  Code  Gb  exit.o [2]
+main                     0x800'048b  0x28  Code  Gb  main.o [1]
+usTicks                 0x2000'0014   0x4  Data  Lc  user_delay.o [1]
+
+
+[1] = C:\Users\Fang\Documents\ITplus\blink\project\Debug\Obj
+[2] = dl7M_tln.a
+[3] = rt7M_tl.a
+[4] = shb_l.a
+
+  1 616 bytes of readonly  code memory
+     52 bytes of readonly  data memory
+  2 072 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
